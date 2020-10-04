@@ -1,0 +1,14 @@
+.movie-card {
+  padding: 1em;
+  max-height: 10em;
+  overflow: hidden;
+}
+
+.movie-card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.movie-card__genres {
+  display: flex;
+}
