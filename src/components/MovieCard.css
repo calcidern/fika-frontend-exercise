@@ -1,4 +1,5 @@
 .movie-card {
+  display: flex;
   padding: 1em;
   max-height: 10em;
   overflow: hidden;
@@ -11,4 +12,11 @@
 
 .movie-card__genres {
   display: flex;
+}
+
+.movie-card__poster{
+  height: 10em;
+}
+.movie-card__description{
+  margin-left: 1em;
 }

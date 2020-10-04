@@ -13,3 +13,7 @@ export function parseMovies(movieData, genreData) {
   const movies = movieData.map(toMovieWithGenres(genreMap));
   return movies;
 }
+
+export function getPosterUrl(posterPath) {
+  return `https://image.tmdb.org/t/p/w500/${posterPath}`;
+}
