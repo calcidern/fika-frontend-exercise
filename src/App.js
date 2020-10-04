@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { fetchGenres, fetchMovies } from './api/movieApi';
+import { parseMovies } from './services/movieService';
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [genres, setGenres] = useState([]);
 
-  useEffect(()=>{
-    fetchMovies().then(({results}) => setMovies(results))
-    fetchGenres().then(({genres}) => setGenres(genres))
+  useEffect(() => {
+    Promise.all([fetchMovies(), fetchGenres()])
+      .then(([{ results }, { genres }]) => [results, genres])
+      .then(([movieData, genreData]) => parseMovies(movieData, genreData))
+      .then(setMovies);
   }, []);
 
 
