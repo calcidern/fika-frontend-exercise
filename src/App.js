@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { fetchGenres, fetchMovies } from './api/movieApi';
 import { parseMovies } from './services/movieService';
+import { MovieList } from './components/MovieList';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="App">
+      <MovieList movies={movies} />
     </div>
   );
 }
